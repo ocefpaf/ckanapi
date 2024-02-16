@@ -4,12 +4,8 @@ jobs:
   test:
     strategy:
       matrix:
-        python-version: ["2.7", "3.8"]
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
     runs-on: ubuntu-latest
-    container:
-      # INFO: python 2 is no longer supported in
-      # actions/setup-python, use python docker image instead
-      image: python:${{ matrix.python-version }}
 
     steps:
     - uses: actions/checkout@v3
