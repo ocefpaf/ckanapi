@@ -1,5 +1,5 @@
 import json
-import cgi
+from  import MultipartPart
 import csv
 from wsgiref.util import setup_testing_defaults
 from wsgiref.simple_server import make_server
@@ -39,7 +39,7 @@ def mock_ckan(environ, start_response):
             "result": environ['CONTENT_TYPE']
             }).encode('utf-8')]
     if environ['PATH_INFO'] == '/api/action/test_upload':
-        fs = cgi.FieldStorage(
+        fs = MultipartPart(
             fp=environ['wsgi.input'],
             environ=environ,
             keep_blank_values=True,

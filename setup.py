@@ -12,6 +12,7 @@ install_requires=[
     "python-slugify>=1.0; python_version >= '3.0'",
     'six>=1.9,<2.0',
     'simplejson',
+    'multipart',
 ]
 tests_require=[
     'pyfakefs==3.6.1',
